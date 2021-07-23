@@ -27,6 +27,7 @@ class linkedlist:
           lastNode.next = newNode
           break
         lastNode = lastnode.next
+  
   def add_to_front(self, newNode):
     if self.head is None:
       self.head = newNode
@@ -36,6 +37,7 @@ class linkedlist:
       self.head = newNode
       self.head.next = temp
       # del(temp)
+      
   def add_at_position(self, position, newNode):
     if position <0 or position >= self.listLength():
       print("position not in range of linked list!")
@@ -53,11 +55,13 @@ class linkedlist:
       temp = currentNode
       newNode.next = temp
       currentNode = newNode
+      
   def printlist(self):
     currentNode = self.head
     while currentNode is not None:
       print(currentNode.data)
       currentNode = currentNode.next
+      
   def delete_at_pos(self, position):
     if position==0:
       self.head = self.head.next
@@ -88,5 +92,7 @@ if __name__ == "__main__":
   ll.add_to_end(node2)
   ll.add_to_front(node3)
   ll.add_at_position(2, node4)
+  
   ll.delete_at_pos(4)
+  
   ll.printlist()
